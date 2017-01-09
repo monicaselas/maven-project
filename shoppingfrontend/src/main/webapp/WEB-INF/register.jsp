@@ -8,8 +8,9 @@
 </head>
 <body>
 <form action="">
-Username:<input type="text" name="id"><br/>
+Username:<input type="text" name="username"><br/>
 Password:<input type="password" name="password"><br/>
+confirm password:<input type="password" name="confirm password"><br/>
 Email Id:<input type="text" name="email"><br/>
 Mobile:<input type="text" name="mobile"><br/>
 Address:<input type="text" name="address"><br/>
