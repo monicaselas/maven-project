@@ -2,6 +2,8 @@ package com.niit.controller.dao;
 
 public interface UserDAO 
 {
-	public boolean isValidCredentials(String id,String password);
+	public boolean isValidCredentials(String username,String password);
+
+	
 
 }
