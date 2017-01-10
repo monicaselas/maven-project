@@ -1,14 +1,21 @@
 package com.niit.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.controller.dao.UserDAO;
-
+import com.niit.controller.dao.UserRegisterDAO;
 import com.niit.controller.daoimpl.UserDAOImpl;
+import com.niit.controller.daoimpl.UserRegisterDAOImpl;
+import com.niit.entitymodel.UserModel;
+
 
 @Controller
 public class HomeController 
@@ -70,6 +77,30 @@ else
 	return model;
 	}
 			}
+
+
+	@RequestMapping(value = "/success", method = RequestMethod.POST)
+	public ModelAndView hello(@Valid @ModelAttribute("obj") UserModel userModel, BindingResult resultobj) {
+
+		// for just practicing errorResult
+		UserRegisterDAO userDao = new UserRegisterDAOImpl();
+		if (resultobj.hasErrors()) {
+			ModelAndView model1 = new ModelAndView("register");
+			return model1;
+		}
+	
+
+		if (userDao.validation(userModel)) {
+		ModelAndView model = new ModelAndView("success");
+
+			return model;
+		} else {
+			ModelAndView model = new ModelAndView("login");
+			return model;
+
+		}
+	}
+
 	
 	
 	

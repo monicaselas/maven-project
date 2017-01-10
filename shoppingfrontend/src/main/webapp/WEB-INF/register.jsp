@@ -7,7 +7,7 @@
 <title>register</title>
 </head>
 <body>
-<form action="">
+<form action=" validate">
 Username:<input type="text" name="username"><br/>
 Password:<input type="password" name="password"><br/>
 confirm password:<input type="password" name="confirm password"><br/>
