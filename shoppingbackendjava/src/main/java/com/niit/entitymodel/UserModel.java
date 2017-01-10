@@ -64,6 +64,9 @@ import javax.persistence.Table;
 
 		public void setaddress(String address) {
 			this.address = address;
+		
+
+	
 		}
 
 		
